@@ -73,14 +73,14 @@ def download():
 
     # select the highest reso stream of the video
     ys = yo.streams.get_highest_resolution()
-    # tk.messagebox.showinfo(title="Congrats !", message= f'{yo.title} will start downloading shortly')
-    # try:
-    ys.download(path_g)
-    tk.messagebox.showinfo(title="Yipeee!", message= f" Your video{yo.title} has downloaded at \n{path_g}")
-    # except:
-    #     tk.messagebox.showerror(title="FAILED", message= "Wrong values")
-    #     time.sleep(3)
-    #     root.destroy()
+    tk.messagebox.showinfo(title="Congrats !", message= f'{yo.title} will start downloading shortly')
+    try:
+        ys.download(path_g)
+        tk.messagebox.showinfo(title="Yipeee!", message= f" Your video{yo.title} has downloaded at \n{path_g}")
+    except:
+        tk.messagebox.showerror(title="FAILED", message= "Wrong values")
+        time.sleep(3)
+        root.destroy()
 
 root = tk.Tk()
 root.title("Yotube Downloader By Abrar")
@@ -93,4 +93,3 @@ path = tk.StringVar()
 widgets()
 
 root.mainloop()
-#
