@@ -68,16 +68,16 @@ def download():
 
     link_g = link.get()
     path_g = path.get()
-
-    yo = YouTube(link_g)   # youtube() object
+    try:
+        yo = YouTube(link_g)   # youtube() object
 
     # select the highest reso stream of the video
-    ys = yo.streams.get_highest_resolution()
-    tk.messagebox.showinfo(title="Congrats !", message= f'{yo.title} will start downloading shortly')
-    try:
+        ys = yo.streams.get_highest_resolution()
+        tk.messagebox.showinfo(title="Congrats !", message= f'{yo.title} will start downloading shortly')
+
         ys.download(path_g)
         tk.messagebox.showinfo(title="Yipeee!", message= f" Your video{yo.title} has downloaded at \n{path_g}")
-    except:
+    except :
         tk.messagebox.showerror(title="FAILED", message= "Wrong values")
         time.sleep(3)
         root.destroy()
