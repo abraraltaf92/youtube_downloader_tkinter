@@ -6,12 +6,14 @@ from tkinter import messagebox,filedialog
 import time
 
 def widgets():
-    tk.Label(root,
-                    text="Youtube downloader",
-                    bg="#202020",
-                    fg="#FFBF00",
-                    font=("Times new roman", 20),
-                    ).place(x=200,y=10)
+    {tk.Label(root,
+              text="Youtube downloader",
+              bg="#ff4500",
+              fg="white",
+              font=("Times new roman", 25),
+
+
+              ).place(x=200, y=10)}
     tk.Label(root,
                     text="Enter URL of youtube video:- ",
                     font=("Times new roman", 16),
@@ -86,7 +88,7 @@ root = tk.Tk()
 root.title("Yotube Downloader By Abrar")
 root.resizable(False, False)
 root.geometry('600x300')
-root.config(bg="#484848")
+root.config(bg="#ff4500")
 
 link = tk.StringVar()
 path = tk.StringVar()
